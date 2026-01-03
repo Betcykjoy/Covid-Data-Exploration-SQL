@@ -23,4 +23,3 @@ Covid-Data-Exploration/
 │ └── Covid_Data_Exploration.sql
 │
 ├── README.md
-└── screenshots/ (optional – Tableau visuals)
