@@ -4,10 +4,6 @@
 This project focuses on **exploratory data analysis (EDA)** of global COVID-19 data using **SQL**.  
 The analysis explores trends in **COVID cases, deaths, infection rates, and vaccinations** across countries and continents.
 
-The insights from this SQL analysis are later used for **data visualization in Tableau**.
-
----
-
 ## 📂 Dataset
 The data is sourced from **Our World in Data**. The data set contains details from 2020 to 2021. 
 - **Covid Deaths Dataset**
@@ -16,7 +12,15 @@ The data is sourced from **Our World in Data**. The data set contains details fr
 Original Source:  
 https://ourworldindata.org/covid-deaths
 
-
----
-
 ## 🗂 Repository Structure
+Covid-Data-Exploration/
+│
+├── data/
+│ ├── CovidDeaths.csv
+│ └── CovidVaccinations.csv
+│
+├── sql/
+│ └── Covid_Data_Exploration.sql
+│
+├── README.md
+└── screenshots/ (optional – Tableau visuals)
