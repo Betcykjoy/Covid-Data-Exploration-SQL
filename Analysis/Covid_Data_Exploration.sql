@@ -3,8 +3,7 @@ FROM CovidDeaths
 WHERE continent IS NOT NULL
 ORDER BY location, date;
 
-//Total Cases vs Total Deaths
-
+--Total Cases vs Total Deaths
 SELECT 
     location,
     date,
@@ -16,8 +15,7 @@ WHERE location = 'Canada'
   AND continent IS NOT NULL
 ORDER BY date;
 
-//Total Cases vs Population
-
+--Total Cases vs Population
 SELECT
     location,
     date,
@@ -28,8 +26,7 @@ FROM CovidDeaths
 WHERE continent IS NOT NULL
 ORDER BY location, date;
 
-//Countries with Highest Infection Rate
-
+--Countries with Highest Infection Rate
 SELECT
     location,
     population,
@@ -40,7 +37,7 @@ WHERE continent IS NOT NULL
 GROUP BY location, population
 ORDER BY percent_population_infected DESC;
 
-Countries with Highest Death Count
+--Countries with Highest Death Count
 SELECT
     location,
     MAX(CAST(total_deaths AS INT)) AS total_death_count
@@ -49,8 +46,7 @@ WHERE continent IS NOT NULL
 GROUP BY location
 ORDER BY total_death_count DESC;
 
-//Death Count by Continent
-
+--Death Count by Continent
 SELECT
     continent,
     MAX(CAST(total_deaths AS INT)) AS total_death_count
@@ -59,8 +55,7 @@ WHERE continent IS NOT NULL
 GROUP BY continent
 ORDER BY total_death_count DESC;
 
-//Global Numbers (Daily)
-
+--Global Numbers (Daily)
 SELECT
     date,
     SUM(new_cases) AS total_cases,
@@ -71,8 +66,7 @@ WHERE continent IS NOT NULL
 GROUP BY date
 ORDER BY date;
 
-//Total Global Numbers
-
+--Total Global Numbers
 SELECT
     SUM(new_cases) AS total_cases,
     SUM(new_deaths) AS total_deaths,
@@ -80,15 +74,13 @@ SELECT
 FROM CovidDeaths
 WHERE continent IS NOT NULL;
 
-// vaccination table
-
+-- vaccination table
 SELECT *
 FROM CovidVaccinations
 ORDER BY location, date;
 
 
-//Join Deaths & Vaccinations Tables
-
+--Join Deaths & Vaccinations Tables
 SELECT
     d.continent,
     d.location,
@@ -102,8 +94,7 @@ JOIN CovidVaccinations v
 WHERE d.continent IS NOT NULL
 ORDER BY d.location, d.date;
 
-//Rolling People Vaccinated (Window Function)
-
+--Rolling People Vaccinated (Window Function)
 SELECT
     d.continent,
     d.location,
@@ -120,8 +111,7 @@ JOIN CovidVaccinations v
 WHERE d.continent IS NOT NULL
 ORDER BY d.location, d.date;
 
-// Percentage of Population Vaccinated
-
+-- Percentage of Population Vaccinated
 WITH PopVsVac AS (
     SELECT
         d.continent,
@@ -141,6 +131,7 @@ WITH PopVsVac AS (
 SELECT *,
        (rolling_people_vaccinated / population) * 100 AS percent_vaccinated
 FROM PopVsVac;
+
 
 
 
