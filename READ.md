@@ -5,7 +5,7 @@ This project focuses on **exploratory data analysis (EDA)** of global COVID-19 d
 The analysis explores trends in **COVID cases, deaths, infection rates, and vaccinations** across countries and continents.
 
 ## 📂 Dataset
-The data is sourced from **Our World in Data**. The data set contains details from 2020 to 2021. 
+The data is sourced from **Our World in Data**. For consistency, this project uses the archived datasets from Alex The Analyst. The dataset contains details from 2020 to 2021. 
 - **Covid Deaths Dataset**
 - **Covid Vaccinations Dataset**
 
@@ -23,3 +23,4 @@ Covid-Data-Exploration/
 │ └── Covid_Data_Exploration.sql
 │
 ├── README.md
+
